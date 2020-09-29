@@ -1,0 +1,95 @@
+* {
+	font-family: Caveat, "Comic Sans MS", sans-serif !important;
+}
+
+.collapsible label,
+.form-group>label,
+.form-group legend {
+    display: inline-block;
+	margin-bottom: 0;
+	font-weight: bold;
+	padding: 0;
+}
+
+.col {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+	.container {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.paper {
+		padding: 0;
+	}
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.paper {
+	border: 0;
+	box-shadow: none;
+	padding-top: 0;
+}
+
+.balance {
+	margin: 0;
+	padding-right: 15px;
+	text-align: right;
+	margin-top: 15px;
+}
+
+.badge {
+	padding-left: 2px;
+	margin-right: -5px;
+}
+
+tr.negative {
+	background: #d2e1be;
+}
+
+select {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.collapsible .input-block {
+	display: inline-block;
+}
+
+button {
+	margin: 0;
+	align-self: flex-end;
+	width: 100%;
+	height: 47px;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-bottom {
+	display: flex;
+	align-items: flex-end;
+}
+
+.collapsible .collapsible-label,
+.collapsible-label {
+	padding: .75rem;
+}
+
+.pl0 {
+	padding-left: 0;
+}

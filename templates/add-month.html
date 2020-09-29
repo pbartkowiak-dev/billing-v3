@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<div class="paper container form-standalone">
+	<form id="new-month-form" action="/add-month" method="POST">
+		<div class="row">
+			<div class="col col-8 sm-8">
+				<div class="form-group">
+					<label for="month_name">Add a New Month</label>
+					<input
+						class="input-block"
+						type="text"
+						id="month_name"
+						name="month_name"
+						autocomplete="off"
+					>
+				</div>
+			</div>
+			<div class="col col-4 sm-4 flex-bottom">
+				<button class="btn-success">Add</button>
+			</div>
+		</div>
+		<input type="submit" hidden="hidden">
+	</form>
+</div>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}

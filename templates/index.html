@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<div class="paper container">
+	<div class="collapsible">
+		<input id="collapsible2" type="checkbox" name="collapsible">
+		<label for="collapsible2" class="collapsible-label">{{ current_month.name }}</label>
+		<div class="collapsible-body">
+		<div class="form-group">
+			<label for="month-select">Select a Month</label>
+			<select id="month-select">
+				{% for month in months %}
+					{% if month.id == current_month.id %}
+						<option value="{{ month.id }}" selected>{{ month.name }}</option>
+					{% else %}
+						<option value="{{ month.id }}">{{ month.name }}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+		</div>
+		<form id="new-month-form" action="/add-month" method="POST">
+			<div class="row">
+				<div class="col col-8 sm-8 pl0">
+					<div class="form-group">
+						<label for="month_name">Add a New Month</label>
+						<input
+							class="input-block"
+							type="text"
+							id="month_name"
+							name="month_name"
+							autocomplete="off"
+						>
+					</div>
+				</div>
+				<div class="col col-4 sm-4 flex-bottom">
+					<button class="btn-success">Add</button>
+				</div>
+			</div>
+			<input type="submit" hidden="hidden">
+		</form>
+		</div>
+	  </div>
+	<h4 class="balance">Current balance: <span class="badge {{'success' if balance <= 0 else 'danger' }}">{{ balance }}</span>&nbsp;zł</h4>
+	<form id="expense-form" action="/" method="POST">
+		<div class="row">
+			<div class="col col-8 sm-8">
+				<div class="form-group">
+					<label for="name">Expense</label>
+					<input
+						class="input-block"
+						type="text"
+						id="name"
+						name="name"
+						autocomplete="off"
+						autofocus
+					>
+				</div>
+			</div>
+			<div class="col col-4 sm-4">
+				<div class="form-group">
+					<label for="value">Value</label>
+					<input
+						class="input-block"
+						type="text"
+						id="value"
+						name="value"
+						autocomplete="off"
+					>
+				</div>
+			</div>
+		</div>
+		<input
+			type="text"
+			hidden="hidden"
+			id="month"
+			name="month"
+			autocomplete="off"
+			value="{{ current_month.id }}"
+		>
+		<input type="submit" hidden="hidden">
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th width="80">Value</th>
+				<th width="110" style="text-align: center;">Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for expense in expenses %}
+			<tr class="{{'negative' if expense.value < 0 }}">
+				<td>{{ expense.name }}</td>
+				<td width="80">{{ expense.value }} zł</td>
+				<td width="110" style="text-align: right;">{{ expense.date_created.date() }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
