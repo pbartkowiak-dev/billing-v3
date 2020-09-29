@@ -69,13 +69,7 @@ def index(month_id=''):
 				current_month=current_month
 			)
 		else:
-			return render_template(
-				'add-month.html',
-				expenses=[],
-				balance=0,
-				months=[],
-				current_month={ "name": "", "id": "" }
-			)
+			return render_template('new-month.html')
 
 @app.route('/add-month', methods=['GET', 'POST'])
 def add_month():
