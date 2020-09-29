@@ -93,3 +93,7 @@ button {
 .pl0 {
 	padding-left: 0;
 }
+
+.form-standalone {
+	padding-top: 15px;
+}

@@ -91,5 +91,9 @@ def add_month():
 		except:
 			return 'There was an issue adding your month.'
 
+@app.route('/new-month', methods=['GET'])
+def new_month():
+	return render_template('new-month.html')
+
 if __name__ == '__main__':
 	app.run(debug=True)

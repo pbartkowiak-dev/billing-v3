@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block head %}
+
+<title>Add Month</title>
+
+{% endblock %}
+
+{% block body %}
 <div class="paper container form-standalone">
 	<form id="new-month-form" action="/add-month" method="POST">
 		<div class="row">
@@ -23,8 +29,5 @@
 		<input type="submit" hidden="hidden">
 	</form>
 </div>
-{% endblock %}
-
-{% block body %}
 
 {% endblock %}
