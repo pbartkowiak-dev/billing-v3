@@ -21,6 +21,12 @@
 - Sql Alchemy
 
 ## How to
+
+### Activate virtualenv (Windows, local)
+```
+env\Scripts\activate.bat
+```
+
 ### Create Database
 ```
 $ sudo python3
@@ -32,8 +38,10 @@ $ sudo python3
 ```
 sudo python3 app.py
 ```
-To work as a webserver the app has to be served on port `80`:
+To work as a webserver the app has to be served on port `80`.
+
+Define host and port number in `env.py` file:
 ```
-if __name__ == '__main__':
-	app.run(host="0.0.0.0", port=80, debug=True)
+HOST = "0.0.0.0"
+PORT = 80
 ```

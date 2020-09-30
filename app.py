@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from functools import reduce
+from env import HOST, PORT
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///expenses.db'
@@ -90,4 +91,4 @@ def new_month():
 	return render_template('new-month.html')
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host=HOST, port=PORT, debug=True)

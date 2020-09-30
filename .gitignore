@@ -3,6 +3,7 @@ expenses.db
 __pycache__
 
 # Environments
+env.py
 .env
 .venv
 env/
