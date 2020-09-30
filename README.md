@@ -19,3 +19,21 @@
 - Python 3
 - Flask
 - Sql Alchemy
+
+## How to
+### Create Database
+```
+$ sudo python3
+>>> from app import db
+>>> db.create_all()
+>>> exit()
+```
+### Run a Webserver
+```
+sudo python3 app.py
+```
+To work as a webserver the app has to be served on port `80`:
+```
+if __name__ == '__main__':
+	app.run(host="0.0.0.0", port=80, debug=True)
+```
