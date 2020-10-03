@@ -13,7 +13,7 @@ if (nameInput && valueInput && expenseForm) {
 		}
 
 		const value = Number(valueInput.value);
-		if (!value || value > 9999) {
+		if (!value || value > 9999 || value < -9999) {
 			isValueValid = false;
 		}
 
