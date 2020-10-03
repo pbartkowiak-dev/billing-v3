@@ -72,6 +72,17 @@ def index(month_id=''):
 		else:
 			return render_template('new-month.html')
 
+@app.route('/remove_expense/<int:id>')
+def remove_expense(id):
+	expense_to_delete = Expense.query.get_or_404(id)
+
+	try:
+		db.session.delete(expense_to_delete)
+		db.session.commit()
+		return redirect('/')
+	except:
+		return 'There was a problem removing this expense'
+
 @app.route('/add-month', methods=['GET', 'POST'])
 def add_month():
 	if request.method == 'GET':

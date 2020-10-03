@@ -89,6 +89,7 @@
 				<th>Name</th>
 				<th width="80">Value</th>
 				<th width="110" style="text-align: center;">Date</th>
+				<th width="80" class="hidden">Remove</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -97,6 +98,12 @@
 				<td>{{ expense.name }}</td>
 				<td width="80">{{ expense.value }} zł</td>
 				<td width="110" style="text-align: right;">{{ expense.date_created.date() }}</td>
+				<td width="80" class="hidden">
+					<form action="/remove_expense/{{expense.id}}" id="remove-expense-form" method="GET">
+						<input type="hidden" name="id" id="id" value="{{expense.id}}">
+						<button type="submit" class="btn-danger remove-btn">Remove</button>
+					</form>
+				</td>
 			</tr>
 			{% endfor %}
 		</tbody>

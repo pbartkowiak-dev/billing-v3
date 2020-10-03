@@ -2,10 +2,14 @@
 	font-family: Caveat, "Comic Sans MS", sans-serif !important;
 }
 
+.hidden {
+	display: none !important;
+}
+
 .collapsible label,
 .form-group>label,
 .form-group legend {
-    display: inline-block;
+	display: inline-block;
 	margin-bottom: 0;
 	font-weight: bold;
 	padding: 0;
@@ -96,4 +100,8 @@ button {
 
 .form-standalone {
 	padding-top: 15px;
+}
+
+.remove-btn {
+	width: auto;
 }
