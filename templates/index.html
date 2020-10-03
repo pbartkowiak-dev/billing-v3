@@ -93,7 +93,7 @@
 		</thead>
 		<tbody>
 			{% for expense in expenses %}
-			<tr class="{{'negative' if expense.value < 0 }}">
+			<tr class="{{'negative' if expense.value < 0 }}" data-id="{{ expense.id }}">
 				<td>{{ expense.name }}</td>
 				<td width="80">{{ expense.value }} zł</td>
 				<td width="110" style="text-align: right;">{{ expense.date_created.date() }}</td>
