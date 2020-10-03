@@ -59,7 +59,7 @@ def index(month_id=''):
 				current_month=current_month[0]
 
 
-			expenses = Expense.query.order_by(Expense.date_created).filter(Expense.month == current_month.id).all()
+			expenses = Expense.query.order_by(Expense.date_created.desc()).filter(Expense.month == current_month.id).all()
 			balance = reduce(lambda a, b: a + b.value, expenses, 0)
 
 			return render_template(
